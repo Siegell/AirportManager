@@ -15,4 +15,8 @@ const string &Worker::getName() const {
     return name;
 }
 
+void Worker::setName(const string &name) {
+    Worker::name = name;
+}
+
 Worker::Worker() = default;

@@ -18,6 +18,10 @@ public:
 
     void changeInfoUI();
 
+    void setPosition(const string &position);
+
+    void setFrequency(double frequency);
+
     friend ostream &operator<<(ostream &os, const Dispatcher &dispatcher);
 };
 
