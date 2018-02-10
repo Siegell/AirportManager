@@ -3,6 +3,7 @@
 //
 
 #include <fstream>
+#include <iostream>
 #include "AirportManager.h"
 
 AirportManager::AirportManager() = default;
@@ -31,5 +32,37 @@ void AirportManager::save() {
 }
 
 void AirportManager::UI_start() {
-
+    while (true) {
+        system("clear");
+        cout << "Введите 1 для просмотра информации об аэропортах" << endl
+             << "Введите 2 для изменения информации об аэропортах" << endl
+             << "Для выхода назад нажмите 0" << endl;
+        char c;
+        cin >> c;
+        switch (c) {
+            case '1': {
+                for (auto i : airports) {
+                    cout << i.getICAOCode() << " " << i.getMETAR() << endl;
+                }
+            }
+            case '2': {
+                cout << "Введите ICAO код аэропорта, который хотите изменить" << endl;
+                string changeAirportICAO;
+                cin >> changeAirportICAO;
+                for (auto i : airports) {
+                    if (i.getICAOCode() == changeAirportICAO) {
+                        i.startUI();
+                    }
+                }
+            }
+            case '0': {
+                if (c == '0') return;
+            }
+            default: {
+                cout << "Желаете продолжить? (Введите н, если нет)" << endl;
+                cin >> c;
+                if (c == 'н') return;
+            }
+        }
+    }
 }

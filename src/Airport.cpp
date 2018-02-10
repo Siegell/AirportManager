@@ -4,6 +4,7 @@
 
 #include "Airport.h"
 #include <fstream>
+#include <iostream>
 #include <iterator>
 
 Airport::Airport() = default;
@@ -58,5 +59,36 @@ void Airport::save() {
     ofstream transitOFS(transitOutFile);
     copy(transitAircrafts.begin(), transitAircrafts.end(), ostream_iterator<AircraftOnFly>(transitOFS, "\n"));
     transitOFS.close();
+}
+
+void Airport::startUI() {
+    while (true) {
+        system("clear");
+        cout << "Введите 1 для просмотра диспетчеров" << endl
+             << "Введите 2 для просмотра текущего METAR" << endl
+             << "Введите 3 для просмотра самолётов на стоянке" << endl
+             << "Введите 4 для просмотра улетающих самолётов" << endl
+             << "Введите 5 для просмотра прилетающих самолётов" << endl
+             << "Введите 6 для просмотра пролетающих самолётов" << endl
+             << "Для выхода назад нажмите 0" << endl;
+        char c;
+        cin >> c;
+        switch (c) {
+            case '1': {
+
+            }
+            case '2': {
+
+            }
+            case '0': {
+                if (c == '0') return;
+            }
+            default: {
+                cout << "Желаете продолжить? (Введите н, если нет)" << endl;
+                cin >> c;
+                if (c == 'н') return;
+            }
+        }
+    }
 }
 
