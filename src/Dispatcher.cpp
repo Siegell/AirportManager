@@ -30,21 +30,33 @@ void Dispatcher::changeInfoUI() {
                 string newName;
                 cin >> newName;
                 setName(newName);
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '2':{
                 cout << "" << endl;
                 string newPos;
                 cin >> newPos;
                 setPosition(newPos);
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '3':{
                 cout << "" << endl;
                 double newFreq;
                 cin >> newFreq;
                 setFrequency(newFreq);
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '0': {
-                if (c == '0') return; // непонятное срабатывание кейса при c != '0'
+                return;
             }
             default: {
                 cout << "Желаете продолжить? (Введите н, если нет)" << endl;

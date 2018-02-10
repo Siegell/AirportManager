@@ -73,15 +73,27 @@ void Airport::startUI() {
         switch (c) {
             case '1': {
                 coutControlInfo();
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '2': {
                 cout << METAR << endl;
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '3': {
                 cout << "Бортовой номер самолёта; Номер стоянки;" << endl;
                 for (auto i : parking) {
                     cout << i << endl;
                 }
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '4': {
                 cout
@@ -90,6 +102,10 @@ void Airport::startUI() {
                 for (auto i : departureAircrafts) {
                     cout << i << endl;
                 }
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '5': {
                 cout
@@ -98,6 +114,10 @@ void Airport::startUI() {
                 for (auto i : arrivingAircrafts) {
                     cout << i << endl;
                 }
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '6': {
                 cout
@@ -106,9 +126,14 @@ void Airport::startUI() {
                 for (auto i : transitAircrafts) {
                     cout << i << endl;
                 }
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '7': {
                 setParamsUI();
+                break;
             }
             case '0': {
                 if (c == '0') return; // непонятное срабатывание кейса при c != '0'
@@ -145,6 +170,7 @@ void Airport::setParamsUI() {
                 cin >> newICAOCode;
 
                 setICAOCode(newICAOCode);
+                break;
             }
             case '2': {
                 cout << "Введите новую информацию о погоде METAR" << endl;
@@ -152,9 +178,11 @@ void Airport::setParamsUI() {
                 cin >> newMETARCode;
 
                 setMETAR(newMETARCode);
+                break;
             }
             case '3': {
                 changeControl();
+                break;
             }
             case '0': {
                 if (c == '0') return; // непонятное срабатывание кейса при c != '0'
@@ -188,7 +216,12 @@ void Airport::changeControl() {
         cin >> c;
         switch (c) {
             case '1': {
+
                 coutControlInfo();
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '2': {
                 string name, position;
@@ -201,6 +234,10 @@ void Airport::changeControl() {
                 cin >> frequency;
                 Dispatcher newDisp(name, position, frequency);
                 control.push_back(newDisp);
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '3': {
                 cout << "Введите имя диспетчера" << endl;
@@ -211,6 +248,10 @@ void Airport::changeControl() {
                         i.changeInfoUI();
                     }
                 }
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '4': {
                 cout << "Введите имя диспетчера" << endl;
@@ -235,9 +276,13 @@ void Airport::changeControl() {
                 } else {
                     cout << "Диспетчер удалён" << endl;
                 };
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '0': {
-                if (c == '0') return; // непонятное срабатывание кейса при c != '0'
+                return;
             }
             default: {
                 cout << "Желаете продолжить? (Введите н, если нет)" << endl;

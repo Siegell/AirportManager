@@ -44,6 +44,10 @@ void AirportManager::UI_start() {
                 for (auto i : airports) {
                     cout << i.getICAOCode() << " " << i.getMETAR() << endl;
                 }
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
+                cin >> c;
+                if (c == '0') return;
+                break;
             }
             case '2': {
                 cout << "Введите ICAO код аэропорта, который хотите изменить" << endl;
@@ -56,12 +60,12 @@ void AirportManager::UI_start() {
                 }
             }
             case '0': {
-                if (c == '0') return; // непонятное срабатывание кейса при c != '0'
+                return;
             }
             default: {
-                cout << "Желаете продолжить? (Введите н, если нет)" << endl;
+                cout << "Желаете продолжить? (Введите 0, если нет)" << endl;
                 cin >> c;
-                if (c == 'н') return;
+                if (c == '0') return;
             }
         }
     }
