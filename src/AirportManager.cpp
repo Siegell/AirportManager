@@ -56,7 +56,7 @@ void AirportManager::UI_start() {
                 }
             }
             case '0': {
-                if (c == '0') return;
+                if (c == '0') return; // непонятное срабатывание кейса при c != '0'
             }
             default: {
                 cout << "Желаете продолжить? (Введите н, если нет)" << endl;

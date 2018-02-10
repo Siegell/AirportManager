@@ -13,3 +13,7 @@ ostream &operator<<(ostream &os, const Dispatcher &dispatcher) {
     os << static_cast<const Worker &>(dispatcher) << dispatcher.position << ";" << dispatcher.frequency << ";";
     return os;
 }
+
+void Dispatcher::changeInfoUI() {
+
+}

@@ -11,4 +11,8 @@ ostream &operator<<(ostream &os, const Worker &worker) {
     return os;
 }
 
+const string &Worker::getName() const {
+    return name;
+}
+
 Worker::Worker() = default;

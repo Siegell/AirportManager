@@ -26,13 +26,21 @@ public:
 
     const string &getMETAR() const;
 
-    void setMETAR(const string &METAR);
-
     const string &getICAOCode() const;
 
     void save();
 
     void startUI();
+
+    void setParamsUI();
+
+    void setICAOCode(const string &ICAOCode);
+
+    void setMETAR(const string &METAR);
+
+    void changeControl();
+
+    void coutControlInfo() const;
 };
 
 

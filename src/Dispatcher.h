@@ -16,6 +16,8 @@ public:
 
     Dispatcher(const string &Name, const string &position, double frequency);
 
+    void changeInfoUI();
+
     friend ostream &operator<<(ostream &os, const Dispatcher &dispatcher);
 };
 

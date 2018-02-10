@@ -18,6 +18,8 @@ public:
 
     explicit Worker(const string &Name);
 
+    const string &getName() const;
+
     friend ostream &operator<<(ostream &os, const Worker &worker);
 };
 
